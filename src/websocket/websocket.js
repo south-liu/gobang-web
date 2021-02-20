@@ -1,7 +1,7 @@
 import code from "../constants/msg-code"
 import receive from "./receive-api"
 
-const url = `ws://${location.hostname}:5556/ws`
+const url = `ws://${location.hostname}:6688/ws`
 let ws = {}
 
 export function initWebSocket() {
@@ -12,11 +12,15 @@ export function initWebSocket() {
 
 function onMessage(e) {
     let msg = JSON.parse(e.data)
-    let data = msg.data
+    let data = JSON.parse(msg.data)
+    console.log(msg);
     switch(msg.code) {
         case code.Fail:
             receive.fail(data)
             break
+        case code.Success:
+            receive.success(data)
+            break;
         case code.HallChat:
             receive.hallChat(data)
             break

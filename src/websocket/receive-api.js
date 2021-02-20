@@ -4,6 +4,9 @@ export default {
     fail(data) {
         alert(data)
     },
+    success(data){
+      alert(data)
+    },
     hallChat(dialogMsg) {
         store.dispatch('setHallDialogMsg', dialogMsg)
     },
