@@ -16,6 +16,8 @@
 <script>
     import {playerRename} from "@/websocket/send-api";
 
+
+
     export default {
         name: "Login",
         data() {

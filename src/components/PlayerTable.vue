@@ -5,7 +5,7 @@
         </div>
         <div class="scrollbar">
             <el-table :data="players" :show-header="false" size="mini">
-                <el-table-column prop="nickname"/>
+                <el-table-column prop="name"/>
                 <el-table-column align="right">
                     <template slot-scope="scope">
                         {{$t('lang.status.' + scope.row.status)}}
